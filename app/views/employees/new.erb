@@ -1,0 +1,15 @@
+<form method="post" action="/employees">
+
+    <input name="first_name" type="text" placeholder="First Name" required> <br>
+    <input name="last_name" type="text" placeholder="Last Name" required> <br>
+    <input name="alias" type="text" placeholder="Alias" required> <br>
+    <input name="title" type="text" placeholder="Title" required> <br>
+    <input name="office" type="text" placeholder="Office" required> <br>
+    <input name="img_url" type="url" placeholder="Picture" required> <br>
+    <select name="dog">
+        <% @dogs.each do |dog| %>
+            <option value="<%=dog.id%>"><%=dog.name%></option>
+        <%end%>   
+    </select> <br>
+    <input type="submit">
+</form>

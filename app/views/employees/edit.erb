@@ -1,0 +1,33 @@
+<form method="post" action="/employees/<%= @employee.id %>%">
+    <input type="hidden" name="_method" value="patch">
+
+    <label> First Name </label>
+    <input name="first_name" type="text" value="<%= @employee.first_name %>" required> <br>
+    
+    <label> Last Name </label>
+    <input name="last_name" type="text" value="<%= @employee.last_name %>" required> <br>
+    
+    <label> Alias </label>
+    <input name="alias" type="text" value="<%= @employee.alias %>" required> <br>
+    
+    <label> Title </label>
+    <input name="title" type="text" value="<%= @employee.title %>" required> <br>
+    
+    <label> Office </label>
+    <input name="office" type="text" value="<%= @employee.office %>" required> <br>
+    
+    <label> Picture </label>
+    <input name="img_url" type="url" value="<%= @employee.img_url %>" required> <br>
+    
+    <select name="dog">
+        <% @dogs.each do |dog| %>
+            <% if @employee.dog_id == dog.id %>
+                <% is_selected = 'selected' %>
+            <% else %>
+                <% is_selected = '' %>
+            <% end %>
+            <option value="<%=dog.id%>" <%= is_selected %>><%=dog.name%></option>
+        <%end%>   
+    </select> <br>
+    <input type="submit">
+</form>

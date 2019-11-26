@@ -1,0 +1,8 @@
+<img src="<%= @employee.img_url %>" alt="">
+<h1>First Name: <%= @employee.first_name %></h1> <br>
+<h1>Last Name: <%= @employee.last_name%></h1> <br>
+<h2>Alias: <%= @employee.alias %></h2> <br>
+<h2>Title: <%= @employee.title %></h2> <br>
+<h2>Office: <%= @employee.office %></h2> <br>
+<h2>Dog:  <%= @employee.dog.name %></h2> <br>
+<h2><%= link_to("Edit", edit_employee_path(@employee.id)) %></h2>
